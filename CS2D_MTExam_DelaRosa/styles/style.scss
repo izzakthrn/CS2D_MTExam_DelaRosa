@@ -1,0 +1,277 @@
+$bg: #EBECE7;
+$dg: #565950;
+$g: #747D62;
+$lg: #B2B89E;
+$w: #ECF2E8;
+
+@mixin lobster () {
+    font-family: "Lobster", sans-serif;
+    font-weight: 400;
+}
+@mixin dscursive () {
+    font-family: "Dancing Script", cursive;
+}
+@mixin sedan () {
+    font-family: "Sedan", serif;;
+}
+@mixin maxwidth (){
+    max-width: 1300px;
+}
+@mixin inlinecenter () {
+    margin-inline: auto;
+}
+@mixin flex ($content, $items) {
+    display: flex;
+    justify-content: $content;
+    align-items: $items;
+}
+@mixin section () {
+    width: 100%;
+    height: 100vh;
+}
+@mixin caption () {
+    color: $dg;
+    font-size: 70px;
+    @include lobster();
+    text-align: center;
+    letter-spacing: 7px;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0px;
+    padding: 0px;
+}
+
+body {
+    @include maxwidth();
+    @include inlinecenter();
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+    background-color: $bg;
+    position: relative;
+}
+
+header {
+    h1 {
+        @include lobster();
+        @include flex(center, center);
+        height: 100px;
+        text-align: center;
+        font-weight: 700;
+        font-size: 50px;
+        letter-spacing: 10px;
+        background-color: $dg;
+        color: $w;
+    }
+}
+
+.aside-container {
+    height: calc(100% - 100px - 50px);
+    position: absolute;
+    right: 0;
+    width: 25%;
+    aside {
+        @include flex(space-evenly, stretch);
+        flex-direction: column;
+        height: 100vh;
+        position: sticky;
+        top: 0;
+        bottom: 0;
+        background-color: $dg;
+        .picture-container {
+            @include flex(space-between, center);
+            flex-direction: column;
+            height: 60%;
+            picture {
+                @include flex(center, center);
+                width: 95%;
+                height: calc(95% - 24px);
+                border-radius: 0px;
+                background: #6f7362;
+                .img {
+                    height: 95%;
+                    width: 95%;
+                    background-image: url("/assets/profile.jpg");
+                    background-size: cover;
+                    background-position: center;
+                }
+            }
+            p {
+                @include flex(center, center);
+                @include dscursive();
+                font-size: 34px;
+                color: $w;
+                font-weight: 700;
+            }
+        }
+        .doc-nav {
+            @include flex(center,center);
+            flex-direction: column;
+            height: calc(35% - 40px);
+            a {
+                @include sedan();
+                @include flex(center, center);
+                text-decoration: none;
+                text-align: center;
+                width: 100%;
+                flex-grow: 1;
+                color: $lg;
+                font-size: 20px;
+                &:hover {
+                    transition: .3s;
+                    background-color: $w;
+                    color: $dg;
+                }
+            }
+        }
+        .link-nav {
+            @include flex(space-evenly, center);
+            i {
+                font-size: 40px;
+                color: $lg;
+                &:hover{
+                    color: $w;
+                    transition: .3s;
+                }
+            }
+        }
+    }
+}
+
+main {
+    width: 75%;
+}
+
+.about {
+    height: calc(100vh - 100px);
+    background-image: url("/assets/about-bg.jfif");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    p {
+        @include flex(center, center);
+        @include dscursive();
+        @include inlinecenter();
+        color: $w;
+        height: 100%;
+        width: 80%;
+        text-align: center;
+        letter-spacing: 4px;
+        font-size: 34px;
+    }
+}
+
+.skills {
+    @include section();
+    @include flex(start, center);
+    flex-direction: column;
+    background-color: rgba(0, 0, 0, 0.395);
+    background-image: url("/assets/skills-bg.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: multiply;
+    h2 {
+        @include caption();
+        @include flex(center, center);
+        width: 100%;
+        height: 15%;
+        background-color: $dg;
+        color: $w;
+    }
+    .list-container {
+        height: 85%;
+        width: 100%;
+        justify-content: center;
+        align-items: center;
+        display: grid;
+        grid-template: 1fr 1fr / 1fr 1fr;
+        ul {
+            @include flex(start, center);
+            @include inlinecenter();
+            flex-direction: column;
+            list-style-type: none;
+            width: 80%;
+            height: 80%;
+            h3 {
+                @include flex(center, center);
+                @include lobster();
+                font-size: 34px;
+                color: $w;
+                letter-spacing: 3px;
+                width: 100%;
+                text-align: center;
+                color: $w;
+                height: 60px;
+                margin-bottom: 8px;
+            }
+            li {
+                @include sedan();
+                color: $w;
+                font-size: 24px;
+                margin-bottom: 4px;
+            }
+        }
+    }
+}
+
+.achievements {
+    @include section();
+    background-color: rgba(6, 6, 6, 0.35);
+    background-image: url("/assets/achievements-bg.jfif");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-blend-mode: darken;
+    h2 {
+        @include caption();
+        height: 120px;
+        @include flex(center, center);
+        color: $w;
+        background: rgba( 255, 255, 255, 0.15 );
+        backdrop-filter: blur( 1.5px );
+        -webkit-backdrop-filter: blur( 1.5px );
+        border-radius: 0px;
+    }
+    .achievements-container {
+        display: flex;
+        width: 100%;
+        height: calc(100% - 120px); 
+        .img {
+            width: 35%;
+            background-image: url("/assets/achievments.png");
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            height: 100%;
+        }
+        ul {
+            @include flex(center, center);
+            @include lobster();
+            flex-direction: column;
+            width: 65%;
+            list-style-type: none;
+            color: $lg;
+            li {
+                width: 100%;
+                text-align: center;
+                letter-spacing: 5px;
+                font-size: 35px;
+                margin: 20px 0px;
+            }
+        }
+    }
+}
+
+footer {
+    @include flex(center, center);
+    @include sedan();
+    width: 100%;
+    height: 50px;
+    background-color: $dg;
+    color: $w;
+    font-size: 20px;
+}

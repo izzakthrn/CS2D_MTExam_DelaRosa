@@ -1,0 +1,283 @@
+html {
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  max-width: 1300px;
+  margin-inline: auto;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
+  background-color: #EBECE7;
+  position: relative;
+}
+
+header h1 {
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100px;
+  text-align: center;
+  font-weight: 700;
+  font-size: 50px;
+  letter-spacing: 10px;
+  background-color: #565950;
+  color: #ECF2E8;
+}
+
+.aside-container {
+  height: calc(100% - 100px - 50px);
+  position: absolute;
+  right: 0;
+  width: 25%;
+}
+.aside-container aside {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: stretch;
+  flex-direction: column;
+  height: 100vh;
+  position: sticky;
+  top: 0;
+  bottom: 0;
+  background-color: #565950;
+}
+.aside-container aside .picture-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  height: 60%;
+}
+.aside-container aside .picture-container picture {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 95%;
+  height: calc(95% - 24px);
+  border-radius: 0px;
+  background: #6f7362;
+}
+.aside-container aside .picture-container picture .img {
+  height: 95%;
+  width: 95%;
+  background-image: url("/assets/profile.jpg");
+  background-size: cover;
+  background-position: center;
+}
+.aside-container aside .picture-container p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+  font-size: 34px;
+  color: #ECF2E8;
+  font-weight: 700;
+}
+.aside-container aside .doc-nav {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: calc(35% - 40px);
+}
+.aside-container aside .doc-nav a {
+  font-family: "Sedan", serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+  color: #B2B89E;
+  font-size: 20px;
+}
+.aside-container aside .doc-nav a:hover {
+  transition: 0.3s;
+  background-color: #ECF2E8;
+  color: #565950;
+}
+.aside-container aside .link-nav {
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+}
+.aside-container aside .link-nav i {
+  font-size: 40px;
+  color: #B2B89E;
+}
+.aside-container aside .link-nav i:hover {
+  color: #ECF2E8;
+  transition: 0.3s;
+}
+
+main {
+  width: 75%;
+}
+
+.about {
+  height: calc(100vh - 100px);
+  background-image: url("/assets/about-bg.jfif");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+.about p {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Dancing Script", cursive;
+  margin-inline: auto;
+  color: #ECF2E8;
+  height: 100%;
+  width: 80%;
+  text-align: center;
+  letter-spacing: 4px;
+  font-size: 34px;
+}
+
+.skills {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: column;
+  background-color: rgba(0, 0, 0, 0.395);
+  background-image: url("/assets/skills_bg.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: multiply;
+}
+.skills h2 {
+  color: #565950;
+  font-size: 70px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 15%;
+  background-color: #565950;
+  color: #ECF2E8;
+}
+.skills .list-container {
+  height: 85%;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  grid-template: 1fr 1fr/1fr 1fr;
+}
+.skills .list-container ul {
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  margin-inline: auto;
+  flex-direction: column;
+  list-style-type: none;
+  width: 80%;
+  height: 80%;
+}
+.skills .list-container ul h3 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  font-size: 34px;
+  color: #ECF2E8;
+  letter-spacing: 3px;
+  width: 100%;
+  text-align: center;
+  color: #ECF2E8;
+  height: 60px;
+  margin-bottom: 8px;
+}
+.skills .list-container ul li {
+  font-family: "Sedan", serif;
+  color: #ECF2E8;
+  font-size: 24px;
+  margin-bottom: 4px;
+}
+
+.achievements {
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(6, 6, 6, 0.35);
+  background-image: url("/assets/achievements-bg.jfif");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-blend-mode: darken;
+}
+.achievements h2 {
+  color: #565950;
+  font-size: 70px;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  text-align: center;
+  letter-spacing: 7px;
+  height: 120px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: #ECF2E8;
+  background: rgba(255, 255, 255, 0.15);
+  backdrop-filter: blur(1.5px);
+  -webkit-backdrop-filter: blur(1.5px);
+  border-radius: 0px;
+}
+.achievements .achievements-container {
+  display: flex;
+  width: 100%;
+  height: calc(100% - 120px);
+}
+.achievements .achievements-container .img {
+  width: 35%;
+  background-image: url("/assets/achievments.png");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+  height: 100%;
+}
+.achievements .achievements-container ul {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Lobster", sans-serif;
+  font-weight: 400;
+  flex-direction: column;
+  width: 65%;
+  list-style-type: none;
+  color: #B2B89E;
+}
+.achievements .achievements-container ul li {
+  width: 100%;
+  text-align: center;
+  letter-spacing: 5px;
+  font-size: 35px;
+  margin: 20px 0px;
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Sedan", serif;
+  width: 100%;
+  height: 50px;
+  background-color: #565950;
+  color: #ECF2E8;
+  font-size: 20px;
+}/*# sourceMappingURL=style.css.map */
